@@ -22,7 +22,7 @@ module.exports = function(env) {
                 use:['style-loader', {
                         loader: 'css-loader',
                         options: {
-                            modules: true 
+                            modules: false 
                         }
                     }, 'sass-loader']
             }, {
