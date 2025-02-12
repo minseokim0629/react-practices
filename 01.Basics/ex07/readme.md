@@ -9,8 +9,8 @@
 
 1. Init Project
 
-    $ mkdir ex06
-    $ cd ex06
+    $ mkdir ex07
+    $ cd ex07
     $ npm init -y 
 
 2. Install Packages
