@@ -5,7 +5,7 @@ function App() {
     return (
         <div>
             <h1>Ex02</h1>
-            <p>특징 II: Sigle Root</p>
+            <p>특징 II: Single Root</p>
         </div>
     );
 }
