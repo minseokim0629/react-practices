@@ -4,10 +4,12 @@
 
 @use "variables" as *;
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit
+  box-sizing: inherit;
 }
 
 html {
@@ -19,6 +21,7 @@ html {
     background-color: $bg-body;
 
     #App {
+      color: #111;
 
       .Header {
         width: $header-width;
@@ -28,9 +31,8 @@ html {
         padding: $header-padding;
         border: $header-border;
         color: $header-color;
-        background-color: $bg-header
+        background-color: $bg-header;
       }
     }
   }
 }
-

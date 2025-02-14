@@ -6,40 +6,28 @@ spring:
       active: development
 
 
-
-  
 ---
 # common configuration
 spring:
    mvc:
-      static-path-pattern: /assets/**
-      throw-exception-if-no-handler-found: true
-
+      static-path-pattern: /**
    web:
       resources:
-         static-locations: classpath:/assets/ 	  
-
+         static-locations: classpath:/assets/
    thymeleaf:      
       check-template-location: true
       enable-spring-el-compiler: true	  
       mode: HTML
-      prefix: classpath:templates/      	  
+      prefix: classpath:/templates/
       suffix : .html
-      
 
 server:
    error:
       whitelabel:
          enabled: false
-         path: /error	  
-
+      path: /error
    servlet:
       context-path: /
-      encoding:
-         charset: utf-8
-         enabled: true
-
-
 
 
 ---
@@ -50,22 +38,21 @@ spring:
          on-profile: development
 
    devtools:
+      restart:
+         enabled: true
       livereload:
          enabled: true
-
    thymeleaf:
       cache: false     
  
 server:
-   port: 8080
+   port: 8088
     
 logging:
    pattern:
       console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
    level:
       root: info
-
-
 
 
 ---
@@ -92,7 +79,5 @@ logging:
    file:
       name: logs/${spring.application.name}.log
    level:
-      com:
-         poscodx:
-            tabbox:
-               exception: ERROR
+      tabbox:
+         exception: ERROR

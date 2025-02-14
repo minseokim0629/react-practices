@@ -3,16 +3,30 @@ import React, { Component } from 'react';
 export default class extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            count: this.props.val,
+            count2: 10
+        };
     }
 
     render() {
         return (
             <div>
-                <button>{'+'}</button>
+                <button onClick={() => {
+                   this.setState({
+                        count : this.state.count + this.props.step
+                   }) 
+                   // anti pattern
+                   // this.state.count +=1;
+                   // this.forceUpdate();
+                }}>{'+'}</button>
                 {' '}
-                { 0 }
+                { this.state.count }
                 {' '}
-                <button>{'-'}</button>
+                <button
+                    onClick={() => {
+                        this.setState({ count : this.state.count - this.props.step}) 
+                     }}>{'-'}</button>
             </div>
         );
     }

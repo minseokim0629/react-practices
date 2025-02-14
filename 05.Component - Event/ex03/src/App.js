@@ -13,11 +13,19 @@ export default function App() {
             <form
                 name='addForm'
                 method='post'
-                action='/do/not/go'>
+                action='/do/not/go'
+                onSubmit={(event) => {
+                    event.preventDefault();
+
+                    console.log(event.target.name, ":Ajax 등록할 겁니다.");
+                }}>
                 <input
                     type='text'
                     name='message'
-                    placeholder='메세지를 입력하세요'/>
+                    placeholder='메세지를 입력하세요'
+                    onChange={(event) => {
+                        console.log(event.target.name, ":", event.target.value);
+                    }}/>
                 <br/>
                 <br/>
                 <input

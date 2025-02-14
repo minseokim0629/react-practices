@@ -5,12 +5,17 @@ import styled from 'styled-components';
 const StyledUL = styled.ul`
     height: 24px;
 `;
-function Tabs({tabItems}) {
+function Tabs({tabs, selectTab}) {
     return (
         <StyledUL>
             {
-                tabItems.map((tabItem, index) => {
-                    return <TabItem key={index} active={tabItem.active} name={tabItem.name}/>;
+                tabs.map((tab, index) => {
+                    return <TabItem 
+                                key={index} 
+                                no={tab.no} 
+                                active={tab.active} 
+                                name={tab.name}
+                                selectTab={selectTab}/>;
                 })
             }
         </StyledUL>

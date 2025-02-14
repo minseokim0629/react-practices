@@ -1,0 +1,10 @@
+//
+// App.scss
+//
+
+@use "variables" as *;
+
+:global(#App) {
+  text-align: center;
+  color: #111;
+}

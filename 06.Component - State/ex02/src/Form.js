@@ -1,23 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './assets/Form.css';
 
 export default function Form() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [validEmail, setValidEmail] = useState(false);
+
     return (
-        <form id="joinForm" name="joinForm" method="post" action="/do/not/post">
+        <form 
+            id="joinForm" 
+            name="joinForm" 
+            method="post" 
+            action="/do/not/post"
+            onSubmit={(e) => {
+                e.preventDefault();
+                console.log({
+                    name: name,
+                    email: email
+                });
+            }}>
             <label htmlFor="name">이름</label>
             <input
+                value={name}
                 id="name"
                 name="name"
                 type="text"
-                autoComplete="off" />
+                autoComplete="off"
+                onChange={(e) => {
+                    // 10자 제한
+                    setName(e.target.value.substring(0, 10));
+                }} />
 
             <label htmlFor="email">이메일</label>
             <input
                 id="email"
                 name="email"
                 type="text"
-                autoComplete="off"/>
-
+                value={email}
+                autoComplete="off"
+                onChange={(e) => {
+                    setEmail(e.target.value);
+                    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // 정규표현식
+                    const valid = re.test(e.target.value);
+                    setValidEmail(valid);
+                }} />
+            
+            {
+                email === '' ? 
+                    null:
+                    validEmail ? 
+                        <b>O</b> : 
+                        <b>X</b>
+            }
+            
+            
 
             <label htmlFor="password">패스워드</label>
             <input id="password" name="password" type="password" autoComplete="off" />
