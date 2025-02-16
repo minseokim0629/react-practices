@@ -2,19 +2,16 @@ import React, { useState } from 'react';
 import Task from './Task';
 import * as styles from './assets/scss/TaskList.scss';
 
-function TaskList({tasks, selectCheckBox}) {
-    //console.log(tasks);
+function TaskList({tasks}) {
     return (
         <div className={styles.Task_List}>
             <ul>
                 {
-                    tasks.map((task) => {
+                    tasks?.map((task) => {
                         return <Task
                                     key={task.no}
-                                    no={task.no}
                                     name={task.name}
-                                    done={task.done}
-                                    selectCheckBox={selectCheckBox}/>
+                                    done={task.done}/>
                     })
                 }
             </ul>

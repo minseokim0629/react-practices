@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import * as styles from './assets/scss/Task.scss';
 
-function Task({no, name, done, selectCheckBox}) {
-    //const [select, setSelect] = useState(false);
+function Task({name, done}) {
+    const [select, setSelect] = useState(done);
+    
     return (
         <li className={styles._Task}>
-            <input type='checkbox' checked={done} 
+            <input type='checkbox' checked={select} 
                 onChange={() => {
-                    selectCheckBox(no);
+                    setSelect(select => !select);
                 }}/>{name}
              <a href='#' className={styles.Task_Remove}></a>
         </li>

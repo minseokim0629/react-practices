@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardList from './CardList';
 import {Kanban_Board} from './assets/scss/KanbanBoard.scss';
 import cards from './assets/json/data.js';
 
 function KanbanBoard() {
-
     return (
         <div className={Kanban_Board}>
             <CardList 
