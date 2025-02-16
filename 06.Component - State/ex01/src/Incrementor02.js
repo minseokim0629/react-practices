@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function Incrementor02() {
+function Incrementor02({val, step}) {
     const [count, setCount]= useState(step);
 
     return (
