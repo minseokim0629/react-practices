@@ -11,9 +11,9 @@ function CardList({title, cards}) {
                 cards.map((card) => {
                     return <Card 
                                 key={card.no}
+                                cardNo={card.no}
                                 title={card.title}
-                                description={card.description}
-                                tasks={card.tasks}/>
+                                description={card.description}/>
                 })
             }
         </div>
